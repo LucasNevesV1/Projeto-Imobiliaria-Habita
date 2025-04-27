@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Habita Imóveis: encontre ou anuncie seu imóvel com agilidade, transparência e confiança.">
+    <title>Habita Imóveis</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="Images/favicon/favicon.ico">
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho com logotipo e menu de navegação -->
+    <header class="menu-principal">
+        <div class="logo">HABITA</div>
+        <nav class="navegacao">
+            <ul>
+                <li><a href="#imoveis">Encontre seu imóvel</a></li>
+                <li><a href="#anuncie">Anuncie seu imóvel</a></li>
+                <li><a href="#sobre-nos">Sobre nós</a></li>
+                <li><button id="relatorio-dom" class="botao-relatorio" aria-label="Relatório de imoveis" onclick="direcionarRelatorio()">Relatório</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Botão para voltar ao topo da página -->
+        <button class="ScrollTop" id="btnScrollTop">
+            <img src="Images/favicon/ImgScrollTop.png" alt="Voltar ao topo">
+        </button>
+
+        <!-- Seção do banner principal -->
+        <section class="banner">
+            <div class="container-banner">
+                <img src="Images/Banner-site.png" alt="Banner de imóveis em destaque">
+            </div>
+        </section>
+
+        <!-- Seção com os imóveis à venda -->
+        <section id="imoveis" class="imoveis">
+            <h2>Imóveis à venda</h2>
+            <div class="container-imoveis">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="Images/casaPiscina.jpg" alt="Imagem do imóvel">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            Casa em Condomínio com Piscina</h3>
+                        <div class="card-info">
+                            <span class="location">Curitiba - PR</span>
+                            <span class="code">Código: <span class="highlight">9635</span></span>
+                        </div>
+                        <div class="card-price">
+                            <span>Venda: </span><span class="highlight">R$ 5.500.000,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="Images/apartamentoModerno.jpg" alt="Apartamento moderno com varanda" loading="lazy">
+                    <div class="card-body">
+                        <h3 class="card-title">Apartamento moderno com varanda</h3>
+                        <div class="card-info">
+                            <span class="location">São Paulo - SP</span>
+                            <span class="code">Código: <span class="highlight">2568</span></span>
+                        </div>
+                        <div class="card-price">
+                            <span>Locação: </span><span class="highlight">R$ 12.550</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="Images/sobradoGourmet.jpg" alt="Sobrado com área gourmet" loading="lazy">
+                    <div class="card-body">
+                        <h3 class="card-title">Sobrado com área gourmet</h3>
+                        <div class="card-info">
+                            <span class="location">Porto Alegre - RS</span>
+                            <span class="code">Código: <span class="highlight">1114</span></span>
+                        </div>
+                        <div class="card-price">
+                            <span>Venda: </span><span class="highlight">R$ 3.550.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botão para ver mais imóveis -->
+            <div id="openModal2" class="ver-todos">
+                <button id="btnVerTodos" class="botao-ver-todos" type="button">Ver todos ></button>
+
+                <div id="modal-contato" class="modal-contato" role="dialog" aria-labelledby="contatoModal"
+                    aria-describedby="modalDescript">
+                    <div class="modal-content">
+                        <span class="close2" aria-label="Fechar">&times;</span>
+                        <h2 id="contatoModal" class="modal-title">Ver mais imóveis</h2>
+
+                        <form id="contactForm">
+
+                            <div class="single-input">
+                              <label for="nomeContato">Nome</label>
+                              <input type="text" class="input" id="nomeContato" maxlength="50" placeholder="Ex: Almir José" required>
+                            </div>
+                      
+                            <div class="single-input">
+                              <label for="emailContato">Email</label>
+                              <input type="email" class="input" id="emailContato" maxlength="50" placeholder="Ex: SeuEmail@email.com"
+                                required>
+                      
+                            </div>
+                      
+                            <div class="single-input">
+                              <label for="telefoneContato">Telefone</label>
+                              <input type="tel" class="input" id="telefoneContato" maxlength="15" placeholder="Ex: (41) 00000-0000" required>
+                      
+                            </div>
+                      
+                            <button type="button" class="botao-enviar" onclick="adicionarRegistro()">Enviar</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção sobre a empresa -->
+        <section id="sobre-nos" class="Sobre-nos">
+            <div class="container-sobre-nos">
+                <img src="Images/Sobre-nos.jpg" alt="Imagem de pessoas em reunião">
+                <div class="texto-sobre-nos">
+                    <h2>Sobre nós</h2>
+                    <p>Bem-vindo à Habita, sua parceira na busca pelo lar ideal. Somos uma imobiliária moderna e
+                        inovadora,
+                        comprometida em oferecer soluções personalizadas e eficientes para compra e venda de imóveis.
+                        Nossa missão é transformar seus sonhos em realidade, com confiança e profissionalismo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de destaque para anunciar imóveis -->
+        <section id="anuncie" class="anuncio-destaque">
+            <!-- Imagem de fundo -->
+            <img src="Images/Interior-apartamento.JPG" alt="Sala com sofá e mesa de centro" class="imagem-fundo">
+            <!-- Card com botão de chamada -->
+            <div class="card-anuncio">
+                <h2>Anuncie seu imóvel</h2>
+                <p>
+                    Queremos transformar o momento da venda ou locação do seu imóvel em um momento prazeroso,
+                    menos burocrático e com acompanhamento do início ao fim.
+                </p>
+                <button id="openModal" class="btn-saiba-mais"
+                    aria-label="Abrir mais informações sobre anúncio de imóvel">
+                    Saiba Mais &gt;
+                </button>
+            </div>
+            <!-- Modal com formulário para cadastro de imóvel -->
+            <div id="myModal" class="modal" role="dialog" aria-labelledby="modalTitle">
+                <div class="modal-content">
+                    <span class="close" aria-label="Fechar">&times;</span>
+                    <h2 id="modalTitle" class="modal-title">Cadastre seu imóvel</h2>
+                    <!-- Formulário de cadastro -->
+                    <form id="propertyForm">
+                        <!-- Tipo, finalidade, endereço, etc -->
+                        <fieldset>
+                            <legend>Dados do Imóvel</legend>
+
+                            <div class="single-input">
+                                <label for="tipo">Tipo do imóvel</label>
+                                <select id="tipo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Casa">Casa</option>
+                                    <option value="Apartamento">Apartamento</option>
+                                </select>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="finalidade">Finalidade</label>
+                                <select id="finalidade" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Venda">Venda</option>
+                                    <option value="Locação">Locação</option>
+                                </select>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="cep">CEP</label>
+                                <input type="text" id="cep" maxlength="9" placeholder="00000-000" required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" id="endereco" maxlength="50" placeholder="Ex: Rua Amaral" required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="numero">Número</label>
+                                <input type="text" id="numero" maxlength="5" placeholder="Ex: 114" required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="bairro">Bairro</label>
+                                <input type="text" id="bairro" maxlength="50" placeholder="Ex: Centro" required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" id="cidade" maxlength="50" placeholder="Ex: Curitiba" required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="estado">Estado</label>
+                                <input type="text" id="estado" maxlength="15" placeholder="Ex: PR" required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="descricao">Descrição</label>
+                                <textarea id="descricao" maxlength="550" rows="4"
+                                    placeholder="Ex: 3 quartos, 2 banheiros, quintal amplo..." required></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Nome, telefone, email -->
+                        <fieldset>
+                            <legend>Seus Dados</legend>
+
+                            <div class="single-input">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" maxlength="50" placeholder="Ex: Almir José" required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" maxlength="15" placeholder="Ex: (41) 00000-0000"
+                                    required>
+                            </div>
+
+                            <div class="single-input">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" maxlength="50" placeholder="Ex: SeuEmail@email.com"
+                                    required>
+                            </div>
+                        </fieldset>
+
+                        <button type="button" class="botao-enviar" onclick="adicionarRegistroImovel()">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+    <!-- Rodapé com informações de contato -->
+    <footer id="rodape" class="rodape">
+        <div class="rodape-azul">
+            <!-- Colunas com endereços e navegação -->
+            <div class="coluna-rodape">
+                <p><strong>Habita Imóveis</strong></p>
+                <p>Rua Tenente-Coronel Cardoso 114 - Centro, Curitiba/PR</p>
+                <p>Rua Domingos Olímpio 14 - Centro, Pinhais/PR</p>
+            </div>
+            <div class="coluna-rodape2">
+                <p><a href="#imoveis">Encontre seu imóvel</a></p>
+                <p><a href="#anuncie">Anuncie seu imóvel</a></p>
+                <p><a href="#sobre-nos">Sobre nós</a></p>
+                <p><a href="#rodape">Contato</a></p>
+            </div>
+            <div class="coluna-rodape3">
+                <p>Venda <br> Telefone: (41) 91234-4321<br>E-mail: venda@habita.com.br</p>
+                <p>Compra<br>Telefone: (41) 91234-4321<br>E-mail: compra@habita.com.br</p>
+            </div>
+        </div>
+        <!-- Ícones de redes sociais -->
+        <div class="footer-social">
+            <a href="#"><img src="Images/favicon/instagramicon.png" alt="Instagram"></a>
+            <a href="#"><img src="Images/favicon/whatsappicon.png" alt="WhatsApp"></a>
+            <a href="#"><img src="Images/favicon/linkedinicon.png" alt="LinkedIn"></a>
+        </div>
+    </footer>
+
+    <script src="Javascript/script.js"></script>
+</body>
+
+</html>

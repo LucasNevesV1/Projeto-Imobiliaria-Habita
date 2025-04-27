@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* ===== Reset básico ===== */
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.ScrollTop {
+    outline: none;
+    border: 0;
+    background-color: #173348;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease;
+}
+
+.ScrollTop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ScrollTop img {
+    width: 100%;
+}
+
+/* ===== HEADER ===== */
+
+.menu-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 55px;
+}
+
+.logo {
+    font-size: 28px;
+    color: #122835;
+    letter-spacing: 2px;
+}
+
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.navegacao a {
+    text-decoration: none;
+    color: #0d2c3f;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* Botão de contato header*/
+.botao-relatorio {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #173348;
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.botao-relatorio:hover {
+    background-color: #004080;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    margin: 3%;
+    padding: 0%;
+}
+
+.container-banner {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.container-banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* ===== SEÇÃO IMÓVEIS ===== */
+
+.imoveis {
+    padding: 40px;
+}
+
+.imoveis h2 {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+}
+
+.container-imoveis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.card-price {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+.highlight {
+    color: #004080;
+}
+
+/* Botão "Ver todos" */
+.ver-todos {
+
+    text-align: right;
+    padding-right: 115px;
+}
+
+.botao-ver-todos {
+    margin-top: 25px;
+    padding: 8px 20px;
+    border: 1px solid #173348;
+    border-radius: 20px;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botao-ver-todos:hover {
+    background-color: #173348;
+    color: white;
+}
+
+.modal-contato {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+
+/* ===== SEÇÃO SOBRE NÓS ===== */
+.container-sobre-nos {
+    display: flex;
+    padding-bottom: 4rem;
+    margin: 0;
+    align-items: center;
+}
+
+.container-sobre-nos img {
+    width: 46%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.texto-sobre-nos {
+    width: 45%;
+    padding-left: 65px;
+}
+
+.texto-sobre-nos h2 {
+    color: #122835;
+    font-size: 2.8rem;
+}
+
+.texto-sobre-nos p {
+    color: #122835;
+    line-height: 1.4;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+/* ===== SEÇÃO ANUNCIE SEU IMÓVEL ===== */
+
+.anuncio-destaque {
+    position: relative;
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.imagem-fundo {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.card-anuncio {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+    background-color: #173348;
+    color: #ffffff;
+    padding: 2rem;
+    max-width: 450px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-anuncio h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.card-anuncio p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.btn-saiba-mais {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+    background-color: white;
+    color: #0d2d3e;
+}
+
+/* ===== MODAL FORMULÁRIO DE CONTATO ===== */
+#myModal,
+#modal-contato {
+    display: none;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close,
+.close2 {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+form legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.single-input {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.single-input label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.single-input input,
+.single-input select,
+.single-input textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.botao-enviar {
+
+    padding: 10px 20px;
+    background-color: #173348;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.botao-enviar:hover {
+    background-color: #155d91;
+}
+
+/* ===== RODAPÉ ===== */
+
+.rodape {
+    bottom: 0;
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.rodape-azul {
+    display: grid;
+    text-align: center;
+    background-color: #173348;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 2%;
+}
+
+.coluna-rodape {
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.coluna-rodape a {
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.coluna-rodape2 {
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-color: #ffffff;
+}
+
+.coluna-rodape2 a {
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.coluna-rodape3 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-social {
+    margin-top: 1%;
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+.tabelaRegistros {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    /* evita colapso da tabela em telas pequenas */
+}
+
+.botao-editar, .botao-excluir {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao-editar {
+    background-color: #2563eb; /* azul */
+    color: white;
+  }
+  
+  .botao-editar:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .botao-excluir {
+    background-color: #dc2626; /* vermelho */
+    color: white;
+  }
+  
+  .botao-excluir:hover {
+    background-color: #b91c1c;
+  }
+
+table thead {
+    background-color: #173348;
+    color: white;
+}
+
+table td,
+table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    word-break: break-word;
+}
+
+
+/* ===== RESPONSIVIDADE PAGINA HABITA ===== */
+@media (max-width: 768px) {
+
+    nav {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .menu-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        gap: 10px;
+    }
+
+    .menu-principal a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-principal button {
+        display: block;
+        width: auto;
+        max-width: 200px;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+
+    .navegacao {
+        font-size: 0.6rem;
+    }
+
+    .navegacao ul {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: start;
+    }
+
+    .navegacao a {
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .container-imoveis {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ver-todos {
+        text-align: left;
+    }
+
+    .container-sobre-nos {
+        flex-direction: column;
+    }
+
+    .container-sobre-nos img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .texto-sobre-nos {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .card-anuncio {
+        position: static;
+        transform: none;
+        margin: 1rem;
+    }
+
+    .rodape-azul {
+        grid-template-columns: 1fr;
+    }
+
+    .container-imoveis {
+        padding: 0 15px;
+    }
+}

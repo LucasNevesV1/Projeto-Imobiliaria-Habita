@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Habita Imóveis: encontre ou anuncie seu imóvel com agilidade, transparência e confiança.">
+  <title>Relatório de Formulários - Habita Imóveis</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="icon" href="/images/favicon/favicon.ico">
+</head>
+
+<body>
+  <!-- Cabeçalho com logotipo e menu de navegação -->
+  <header class="menu-principal">
+    <div class="logo">HABITA</div>
+    <nav class="navegacao">
+      <ul>
+        <li><a href="#tabelaRegistrosContato">Clientes Interessados</a></li>
+        <li><a href="#tabelaRegistrosImoveis">Imoveis negociação</a></li>
+        <li><button id="relatorio-dom" class="botao-relatorio" aria-label="Pagina HABITA"
+            onclick="direcionarHabita()">Voltar</button></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Tabela de visualização das respostas do forms -->
+  <main>
+    <h1>Formulário: Clientes Interessados</h1>
+    <div class="tabela-wrapper">
+      <table id="tabelaRegistrosContato" class="tabelaRegistros">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Os registros de clientes interessados serão inseridos aqui -->
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Formulário: Imóveis Cadastrados</h2>
+    <div class="tabela-wrapper">
+      <table id="tabelaRegistrosImoveis" class="tabelaRegistros">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Finalidade</th>
+            <th>Endereço</th>
+            <th>Descrição</th>
+            <th>Proprietário</th>
+            <th>Contato</th>
+            <th>Email</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Os registros de imóveis serão inseridos aqui -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/Javascript/script.js"></script>
+</body>
+
+</html>
